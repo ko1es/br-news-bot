@@ -17,6 +17,7 @@ class DataBase(BaseModel):
 class ServiceConfig(BaseModel):
     service_name: str = 'br-news-bot-service'
     bot_token: str
+    chat_id: str
 
 
 class RabbitMQ(BaseModel):

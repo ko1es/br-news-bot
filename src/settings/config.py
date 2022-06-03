@@ -14,6 +14,7 @@ CONFIG = Config(
     ),
     service=ServiceConfig(
         bot_token=os.environ['BOT_TOKEN'],
+        chat_id=os.environ['CHAT_ID'],
     ),
     rabbitmq=RabbitMQ(
         user=os.environ['RABBITMQ_USER'],
