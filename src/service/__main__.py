@@ -22,6 +22,7 @@ async def execute() -> None:
             date=datetime.now(),
             source='example_source'
         )
+        # TODO: Read Post from QUEUE and send it
         logging.info('Start sending message')
         await send_message_to_channel(post=post)
         logging.info('Fall a sleep')
