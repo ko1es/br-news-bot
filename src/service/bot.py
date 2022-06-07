@@ -8,6 +8,7 @@ from jinja2 import Environment
 from jinja2 import PackageLoader
 from jinja2 import select_autoescape
 
+from service.models import Post
 
 # Setup Jinja2 template necessities
 env = Environment(loader=PackageLoader("service"), autoescape=select_autoescape())
@@ -19,8 +20,10 @@ bot = Bot(token=CONFIG.service.bot_token, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot)
 
 
-async def send_message_to_channel(msg: str) -> None:
+async def send_message_to_channel(post: Post) -> None:
     # for post in results:
     # await message.answer(template.render(post))
+    logging.info('Render message')
+    message = template.render(post)
     logging.info(f'Send message to Chat: {CONFIG.service.chat_id}')
-    await bot.send_message(chat_id=CONFIG.service.chat_id, text=msg)
+    await bot.send_message(chat_id=CONFIG.service.chat_id, text=message)
