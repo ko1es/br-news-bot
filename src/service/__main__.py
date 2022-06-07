@@ -18,6 +18,8 @@ async def execute() -> None:
 
 
 loop = asyncio.get_event_loop()
+
+
 try:
     logging.info(f'Start service: {CONFIG.service.service_name}')
     asyncio.ensure_future(execute())

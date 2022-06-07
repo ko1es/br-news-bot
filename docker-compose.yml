@@ -26,7 +26,7 @@ services:
     env_file:
       - conf/env/db.dev.env
     ports:
-      - 5432:5432
+      - 5434:5432
     networks:
       - uf-network
     volumes:
@@ -37,22 +37,8 @@ services:
       timeout: 5s
       retries: 5
 
-  # <name>-rabbitmq:
-  #   image: rabbitmq:3-management-alpine
-  #   container_name: 'rabbitmq'
-  #   ports:
-  #       - 5672:5672
-  #       - 15672:15672
-  #   volumes:
-  #       - <name>-rabbitmq/data/:/var/lib/rabbitmq/
-  #       - <name>-rabbitmq/log/:/var/log/rabbitmq/
-  #   networks:
-  #       - uf-network
-
 volumes:
   br-news-bot-db-data:
-  # <name>-rabbitmq/data:
-  # <name>-rabbitmq/log:
     
 networks:
   uf-network:

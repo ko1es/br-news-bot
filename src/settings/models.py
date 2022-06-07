@@ -25,6 +25,7 @@ class RabbitMQ(BaseModel):
     password: str
     port: int = 5672
     host: str = 'rabbitmq'
+    default_queue_name: str = 'br_news_posts'
 
     def get_connection_url(self) -> str:
         # return "amqp://guest:guest@rabbitmq:5672/"

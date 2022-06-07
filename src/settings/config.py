@@ -19,5 +19,6 @@ CONFIG = Config(
     rabbitmq=RabbitMQ(
         user=os.environ['RABBITMQ_USER'],
         password=os.environ['RABBITMQ_PASSWORD'],
+        host=os.environ['RABBITMQ_HOST'],
     )
 )
